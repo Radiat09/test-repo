@@ -1,0 +1,12 @@
+name: on push
+on:
+  push:
+    branches: "main" #we can do this on schedule but for testing we will do on pushing
+jobs:
+  run-bat:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Run .bat File
+        run: .\backup_script.bat
